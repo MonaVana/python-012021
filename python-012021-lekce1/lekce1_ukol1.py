@@ -6,7 +6,8 @@ baliky = {
     "B947X": False,
 }
 kodBaliku = input ("Zadej kód balíku: ")
-if baliky[kodBaliku]:
-    print ("Balík byl předán kurýrovi")
-else:
-    print ("Balík zatím nebyl předán kurýrovi")
+if kodBaliku in baliky:
+    if baliky[kodBaliku]:
+        print ("Balík byl předán kurýrovi")
+    else:
+        print ("Balík zatím nebyl předán kurýrovi")
