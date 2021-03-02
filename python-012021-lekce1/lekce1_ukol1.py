@@ -6,7 +6,7 @@ baliky = {
     "B947X": False,
 }
 kodBaliku = input ("Zadej kód balíku: ")
-if bool(baliky[kodBaliku]) is True:
+if baliky[kodBaliku]:
     print ("Balík byl předán kurýrovi")
 else:
     print ("Balík zatím nebyl předán kurýrovi")
