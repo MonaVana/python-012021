@@ -8,9 +8,9 @@ sklad = {
 kodSoucastky = input("Zadej kód součástky: ")
 mnozstvi = int(input("Kolik si chce koupit: "))
 if kodSoucastky not in sklad:
-    print("Součástka není skladem.")
+    print(f"Součástka {kodSoucastky} není skladem.")
 elif sklad[kodSoucastky] <= mnozstvi:
-    print(f"Součástka je skladem, ale max. v počtu {sklad.pop(kodSoucastky)} ks.")
+    print(f"Součástka {kodSoucastky} je skladem, ale max. v počtu {sklad.pop(kodSoucastky)} ks.")
 else:
     sklad[kodSoucastky] -= mnozstvi
-    print(f"Součástky lez objednat. Na skladě zbyde {sklad[kodSoucastky]} ks.")
+    print(f"Součástky {kodSoucastky} lez objednat. Na skladě zbyde {sklad[kodSoucastky]} ks.")
