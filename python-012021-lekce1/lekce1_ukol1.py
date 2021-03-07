@@ -11,3 +11,5 @@ if kodBaliku in baliky:
         print ("Balík byl předán kurýrovi")
     else:
         print ("Balík zatím nebyl předán kurýrovi")
+if kodBaliku not in baliky:
+    print("Špatná hodnota.")
