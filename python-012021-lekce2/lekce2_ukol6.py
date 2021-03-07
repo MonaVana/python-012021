@@ -491,9 +491,11 @@ staty = [
   {'name': 'Zimbabwe', 'capital': 'Harare', 'region': 'Africa', 'subregion': 'Eastern Africa', 'population': 14240168,
    'area': 390757.0}]
 vstup = input("Zadej region: ")
+stat_nenalezen = True
 for item in staty:
   stat = item["name"]
   if item["region"] == vstup:
     print(stat)
-else:
+    stat_nenalezen = False
+if stat_nenalezen:
     print("Neznámý region")
