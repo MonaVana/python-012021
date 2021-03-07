@@ -5,5 +5,9 @@ volnePokoje = {
   12: ["Amadeus", "Vlasy"]
 }
 cisloHodiny = int(input("V kolik hodin si chceš zamluvit pokoj: "))
-pocetPokoju = volnePokoje[cisloHodiny]
-print(f"V {cisloHodiny} hodin je počet pokojů volných: {len(pocetPokoju)}")
+if cisloHodiny in volnePokoje:
+  pocetPokoju = volnePokoje[cisloHodiny]
+  print(f"V {cisloHodiny} hodin je počet pokojů volných: {len(pocetPokoju)}")
+else:
+  print("Špatná hodnota")
+
