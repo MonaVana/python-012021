@@ -7,20 +7,23 @@ class Auto:
     self.available = True
 
   def pujc_auto(self):
-    self.available = False
-
-  def getInfo(self):
     if self.available:
+      self.available = False
       text = "Potvrzuji zapůjčení vozidla."
     else:
       text = "Vozidlo není k dispozici."
-    print(f"Registrační značka: {self.plate}, typ vozidla: {self.brand}. {text}")
+    return text
+
+  def getInfo(self):
+    return f"Registrační značka: {self.plate}, typ vozidla: {self.brand}. {self.pujc_auto()}"
 
   def vrat_auto(self, tachometr, pocetDni):
+    self.tachometr = tachometr
     if pocetDni <= 7:
       cena = pocetDni * 400
     else:
       cena = pocetDni * 300
+    self.available = True
     return f"Cena za půjčení auta je: {cena}"
 
 skoda = Auto("1P3 4747", "Škoda Octavia", 41253, 42000)

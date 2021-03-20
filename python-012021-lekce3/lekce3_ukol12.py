@@ -6,34 +6,31 @@ class Auto:
     self.available = True
 
   def pujc_auto(self):
-    self.available = False
-
-  def getInfo(self):
     if self.available:
+      self.available = False
       text = "Potvrzuji zapůjčení vozidla."
     else:
       text = "Vozidlo není k dispozici."
-    print(f"Registrační značka: {self.plate}, typ vozidla: {self.brand}. {text}")
+    return text
+
+  def getInfo(self):
+    return f"Registrační značka: {self.plate}, typ vozidla: {self.brand}. {self.pujc_auto()}"
+
 
 skoda = Auto("1P3 4747", "Škoda Octavia", 41253)
 peugeot = Auto("4A2 3020", "Peugeot 403 Cabrio", 47534)
 
-vypujcka = input("Zadej značku, kterou si chceš vypůjčit: ")
-if vypujcka == "Škoda":
-    skoda.getInfo()
-    skoda.pujc_auto()
-elif vypujcka == "Peugeot":
-    peugeot.getInfo()
-    peugeot.pujc_auto()
-else:
+def kontrola(vypujcka):
+  if vypujcka == "Škoda":
+    print(skoda.getInfo())
+  elif vypujcka == "Peugeot":
+    print(peugeot.getInfo())
+  else:
     print("Půjčujeme pouze vozy Škoda nebo Peugeot.")
 
-vypujcka = input("Zadej značku, kterou si chceš vypůjčit: ")
-if vypujcka == "Škoda":
-    skoda.getInfo()
-    skoda.pujc_auto()
-elif vypujcka == "Peugeot":
-    peugeot.getInfo()
-    skoda.pujc_auto()
-else:
-    print("Půjčujeme pouze vozy Škoda nebo Peugeot.")
+
+print(kontrola("Škoda"))
+print(kontrola("Audi"))
+print(kontrola("Škoda"))
+print(kontrola("Peugeot"))
+print(kontrola("Peugeot"))
