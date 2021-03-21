@@ -20,13 +20,14 @@ class Auto:
 skoda = Auto("1P3 4747", "Škoda Octavia", 41253)
 peugeot = Auto("4A2 3020", "Peugeot 403 Cabrio", 47534)
 
+
 def kontrola(vypujcka):
   if vypujcka == "Škoda":
-    print(skoda.getInfo())
+    return skoda.getInfo()
   elif vypujcka == "Peugeot":
-    print(peugeot.getInfo())
+    return peugeot.getInfo()
   else:
-    print("Půjčujeme pouze vozy Škoda nebo Peugeot.")
+    return "Půjčujeme pouze vozy Škoda nebo Peugeot."
 
 
 print(kontrola("Škoda"))
