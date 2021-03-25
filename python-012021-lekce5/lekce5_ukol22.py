@@ -9,7 +9,8 @@ got = got.set_index("Name")
 
 #got.info()
 #got.index
+#print(got.columns)
 #print(got.loc["Hali"])
 #print(got.loc["Gevin Harlaw" : "Gillam"])
 #print(got.loc["Gevin Harlaw" : "Gillam", "Death Year"])
-print(got.loc["Gevin Harlaw" : "Gillam", "GoT" : "DwD"])
+#print(got.loc["Gevin Harlaw" : "Gillam", "GoT" : "DwD"])
