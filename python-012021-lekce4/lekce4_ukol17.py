@@ -28,7 +28,7 @@ class Uzivatel:
     self.delkaSledovani = 0
 
   def pripoctiZhlednuti(self, celkovaDelka):
-    self.delkaSledovani += celkovaDelka
+    self.delkaSledovani += celkovaDelka.getCelkovaDelka()
 
   def getInfo(self):
     return f"Uživatel {self.uzivatelskeJmeno} zhlédl celkem {self.delkaSledovani} minut."

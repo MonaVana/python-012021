@@ -7,25 +7,31 @@ vysledky = [
 ]
 
 def ohodnot_studenta(sumOfMarks):
-  sumOfMarks = {}
-  for item in vysledky:
-    student = item["Jméno"]
-    mark = item.pop("Jméno")
-    if student in sumOfMarks:
-      sumOfMarks[student] += mark
-    else:
-      sumOfMarks[student] = mark
+  #sumOfMarks = {}
+  #for item in vysledky:
+   # student = item["Jméno"]
+    #mark = item.pop("Jméno")
+    #if student in sumOfMarks:
+     # sumOfMarks[student] += mark
+    #else:
+     # sumOfMarks[student] = mark
 
-  totalMark = 0
-  for mark in sumOfMarks.values():
-    totalMark += mark
-    averageMark = totalMark / len(sumOfMarks)
+ # totalMark = 0
+  #for mark in sumOfMarks.values():
+   # totalMark += mark
+    #averageMark = totalMark / len(sumOfMarks)
 
-  if averageMark <= 1.5 and mark != 3:
-    return f"{student}: Prospěl s vyznamenáním"
-  elif mark == 5:
-    return f"{student}: Neprospěl"
+  suma = sum(sumOfMarks.values())
+  averageMark = round(suma / len(sumOfMarks), 1)
+
+  if averageMark <= 1.5 and 3 not in sumOfMarks.values():
+    return f"Prospěl s vyznamenáním"
+  elif 5 in sumOfMarks.values():
+    return f"Neprospěl"
   else:
-    return f"{student}: Prospěl"
+    return f"Prospěl"
 
+for item in vysledky:
+  mark = item.pop("Jméno")
+  print(f"{mark}: {ohodnot_studenta(item)}")
 
